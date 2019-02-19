@@ -1,8 +1,35 @@
 FROM ubuntu:16.04
 
-# copy source codes
-COPY * /
-WORKDIR /
+RUN mkdir /clusterfuzz
+COPY * /clusterfuzz
+WORKDIR /clusterfuzz
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get autoremove -y && \
+    apt-get install -y \
+        apt-transport-https \
+        build-essential \
+        curl \
+        gdb \
+        libcurl4-openssl-dev \
+        libffi-dev \
+        libssl-dev \
+        locales \
+        lsb-release \
+        net-tools \
+        python \
+        python-dbg \
+        python-dev \
+        python-pip \
+        socat \
+        sudo \
+        unzip \
+        util-linux \
+        wget \
+        zip
 
 # google cloud sdk
 RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
