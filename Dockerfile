@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN mkdir /clusterfuzz
-COPY * /clusterfuzz/
+COPY ./ /clusterfuzz/
 WORKDIR /clusterfuzz
 
 ENV DEBIAN_FRONTEND noninteractive
