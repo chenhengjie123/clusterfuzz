@@ -119,7 +119,7 @@ pip install --upgrade -r src/local/requirements.txt
 # Install other dependencies (e.g. bower).
 nodeenv -p --prebuilt
 npm install -g bower polymer-bundler
-bower install
+bower install --allow-root
 
 # Install gcloud dependencies.
 if gcloud components install --quiet beta; then
