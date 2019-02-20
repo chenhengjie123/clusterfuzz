@@ -38,7 +38,7 @@ RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
     apt-get update -y && apt-get install google-cloud-sdk -y
 
 # other dependencies
-# RUN local/install_deps.sh
+RUN local/install_deps.bash
 
 # open bash for debug
 CMD ["/bin/bash"]
