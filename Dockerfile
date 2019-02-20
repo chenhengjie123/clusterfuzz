@@ -38,7 +38,7 @@ RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
     apt-get update -y && apt-get install google-cloud-sdk -y
 
 # just for debug
-RUN cwd
+RUN pwd
 RUN tree .
 
 # other dependencies
