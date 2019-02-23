@@ -42,7 +42,7 @@ RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
 # other dependencies
 RUN local/install_deps.bash
 RUN cd src && bazel run //local:create_gopath
-RUN cd ../local && python polymer_bundler.py 
+RUN cd local && python polymer_bundler.py 
 WORKDIR /clusterfuzz
 
 # open bash for debug
