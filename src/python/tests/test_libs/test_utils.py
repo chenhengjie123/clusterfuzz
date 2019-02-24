@@ -198,7 +198,7 @@ class EmulatorInstance(object):
 def _find_free_port():
   """Find a free port."""
   sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-  sock.bind(('localhost', 0))
+  sock.bind(('0.0.0.0', 0))
   _, port = sock.getsockname()
   sock.close()
 

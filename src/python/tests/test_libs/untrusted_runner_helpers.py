@@ -38,7 +38,7 @@ TEST_LIBS_DATA_DIR = os.path.join(TEST_LIBS_DIR, 'data')
 
 def untrusted_process():
   """Start an untrusted process."""
-  os.environ['BOT_NAME'] = 'localhost'
+  os.environ['BOT_NAME'] = '0.0.0.0'
   untrusted.start_server()
 
 
@@ -57,7 +57,7 @@ def _create_test_bot():
 
   env = os.environ.copy()
   env['UNTRUSTED_WORKER'] = 'True'
-  env['BOT_NAME'] = 'localhost'
+  env['BOT_NAME'] = '0.0.0.0'
   bot_proc = subprocess.Popen(
       ['python', 'butler.py', 'run_bot', bot_path], env=env)
 
@@ -141,7 +141,7 @@ class UntrustedRunnerIntegrationTest(unittest.TestCase):
     data_types.HostWorkerAssignment(
         host_name='host',
         instance_num=0,
-        worker_name='localhost',
+        worker_name='0.0.0.0',
         project_name='project',
         id='host-0').put()
 

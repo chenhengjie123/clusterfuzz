@@ -412,7 +412,7 @@ class AllowOAuthTest(unittest.TestCase):
     test_helpers.patch(self, ['libs.handler.get_email_and_access_token'])
     self.app = webtest.TestApp(webapp2.WSGIApplication([('/', OAuthHandler)]))
     test_helpers.patch_environ(self)
-    os.environ['AUTH_DOMAIN'] = 'localhost'
+    os.environ['AUTH_DOMAIN'] = '0.0.0.0'
 
   def test_success(self):
     """Test setting environ and header properly."""

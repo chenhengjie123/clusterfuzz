@@ -313,7 +313,7 @@ func handleError(w http.ResponseWriter, err error) bool {
 }
 
 func main() {
-	flag.StringVar(&ip, "ip", "localhost", "IP to listen on.")
+	flag.StringVar(&ip, "ip", "0.0.0.0", "IP to listen on.")
 	flag.IntVar(&port, "port", 8080, "Port to listen on.")
 	flag.StringVar(&projID, "project-id", "google.com:clusterfuzz", "Project ID")
 	flag.IntVar(&projNum, "project-num", 246243303817, "Project numeric ID")
