@@ -253,5 +253,5 @@ func main() {
 	flag.Parse()
 
 	http.HandleFunc("/", handler)
-	http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", port), nil)
+	http.ListenAndServe(fmt.Sprintf("localhost:%d", port), nil)
 }

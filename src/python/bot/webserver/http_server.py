@@ -142,7 +142,7 @@ def start_server_thread(host, port):
 
 def start():
   """Initialize the HTTP server on the specified ports."""
-  http_host = '0.0.0.0'
+  http_host = 'localhost'
   if environment.get_value('ANDROID_GCE'):
     # Android on GCE doesn't rely on forwarding, and device instances connect
     # directly to the host ip/port through the internal network.
