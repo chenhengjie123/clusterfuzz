@@ -31,7 +31,9 @@ RUN apt-get update && \
         unzip \
         util-linux \
         wget \
-        zip
+        zip \
+        vim \
+        nginx
 
 # google cloud sdk
 RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
